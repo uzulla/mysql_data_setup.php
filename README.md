@@ -16,8 +16,8 @@ Mysqlのdata dirをシュッと好きな所に作成し、そのdata dirをつ�
 mysqlはBrewなどで事前に入れて下さい。
 
 ```
-$ git clone this_repo
-$ cd this_repo
+$ git clone https://github.com/uzulla/mysql_data_setup.sh.git
+$ cd mysql_data_setup.sh
 $ composer install
 ```
 
