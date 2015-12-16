@@ -81,5 +81,5 @@ socket = {$dir}/mysql_data/socket
 port = {$cmd['port']}
 bind-address = 127.0.0.1");
 
-echo "完了しました！\n\n起動には ./start_mysq.sh 停止には ./stop_mysql.sh を実行してください
+echo "完了しました！\n\n起動には ./start_mysql.sh 停止には ./stop_mysql.sh を実行してください
 うまく起動しない場合には {$dir}/mysql_data/マシン名.err をみてください\n";
