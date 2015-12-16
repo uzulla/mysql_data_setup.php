@@ -27,19 +27,23 @@ $ composer install
 
 ```
 # 作成
-$ mkdir project_mysql
-$ cd project_mysql
-$ /path/to/mysql_data_setup.php
+$ mkdir /path/to/project_mysql
+$ cd /path/to/project_mysql
+$ /path/to/this/mysql_data_setup.php
 
 # 開始
+$ cd /path/to/project_mysql
 $ start_mysql.sh
 
 # 停止
+$ cd /path/to/project_mysql
 $ stop_mysql.sh
 
 # 削除（初期化は削除＞作成してください）
+$ cd /path/to/project_mysql
 $ stop_mysql.sh
-$ rmdir -r project_mysql
+$ cd ..
+$ rm -r /path/to/project_mysql
 ```
 
 socketファイルは `mysql_data/socket` に作成されます。
