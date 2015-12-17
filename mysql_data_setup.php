@@ -1,5 +1,11 @@
 #!/usr/bin/env php
 <?php
+// use strict;
+set_error_handler(function($errno, $errstr, $errfile, $errline){
+    echo "ERROR({$errno}) at {$errfile}:{$errline}, {$errstr}\n";
+    exit(1);
+});
+
 require_once 'vendor/autoload.php';
 // 初期セットアップ、環境変数も見る
 $cmd = new Commando\Command();
