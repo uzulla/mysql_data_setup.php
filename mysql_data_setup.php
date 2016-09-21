@@ -88,4 +88,6 @@ port = {$cmd['port']}
 bind-address = 127.0.0.1");
 
 echo "完了しました！\n\n起動には ./start_mysql.sh 停止には ./stop_mysql.sh を実行してください
-うまく起動しない場合には {$dir}/mysql_data/マシン名.err をみてください\n";
+うまく起動しない場合には {$dir}/mysql_data/マシン名.err をみてください\n
+$ mysqladmin -h 127.0.0.1 -u root password my_new_pass\n
+もわすれずに";
