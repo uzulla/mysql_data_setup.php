@@ -11,8 +11,8 @@ require_once 'vendor/autoload.php';
 $cmd = new Commando\Command();
 
 $cmd->option('mysql_base')
-    ->describedAs('インストール済みMysql base dir (/usr や /usr/local/Cellar/mysql/5.6.27 (brew)).')
-    ->default('/usr/local/Cellar/mysql/5.6.27');
+    ->describedAs('インストール済みMysql base dir (/usr や /usr/local/Cellar/mysql/5.7.14 (brew)).')
+    ->default('/usr/local/Cellar/mysql/5.7.14');
 
 $cmd->option('port')
     ->describedAs('生成する設定ファイルに記述するmysql の受付ポート')
@@ -38,15 +38,15 @@ if(count($file_list)>0){
 }
 
 // mysqlのBasedirがあっているか確認する
-// Could not find my-default.cnf
-if(!file_exists("{$cmd['mysql_base']}/support-files/my-default.cnf")){
-    echo "mysql base dirがみつかりません(/support-files/my-default.cnfがみつかりません)";
+// Could not find bin/mysql
+if(!file_exists("{$cmd['mysql_base']}/bin/mysql")){
+    echo "mysql base dirがみつかりません(bin/mysqlがみつかりません)";
     exit(1);
 }
 
 chdir($dir);
 
-$mysql_install_db = $cmd['mysql_base']."/bin/mysql_install_db --datadir={$dir}/mysql_data/ --basedir=".$cmd['mysql_base'];
+$mysql_install_db = "{$cmd['mysql_base']}/bin/mysqld --datadir={$dir}/mysql_data/ --log-error-verbosity=3 --initialize-insecure ";
 
 //本当につくっていいか聞く
 echo "以下の内容で作成しますか？
